@@ -67,3 +67,21 @@ namespace butorgyar
     }
 }
 
+class Program
+{
+    static void Main(string[] args)
+    {
+        var butor = new butorgyar.Butor();
+
+        var lap1 = new butorgyar.Butorlap("tartólap", 200, 60);
+        var lap2 = new butorgyar.Butorlap("tartólap", 100, 60);
+        var lap3 = new butorgyar.Butorlap("hátlap", 200, 100);
+
+        butor.LapHozzaad(lap1);
+        butor.LapHozzaad(lap2);
+        butor.LapHozzaad(lap3);
+
+        Console.WriteLine(butor);
+    }
+}
+
