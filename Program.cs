@@ -30,4 +30,40 @@ namespace butorgyar
         }
     }
 
+    public class Butor
+    {
+        private Butorlap[] lapok;
+        private int lapokSzama;
+
+        public Butor()
+        {
+            lapok = new Butorlap[100];
+            lapokSzama = 0;
+        }
+
+        public void LapHozzaad(Butorlap lap)
+        {
+            if (lapokSzama < lapok.Length)
+            {
+                lapok[lapokSzama] = lap;
+                lapokSzama++;
+            }
+        }
+
+        public int ArSzamol()
+        {
+            int osszeg = 0;
+            for (int i = 0; i < lapokSzama; i++)
+            {
+                osszeg += lapok[i].ArSzamol();
+            }
+            return osszeg;
+        }
+
+        public override string ToString()
+        {
+            return $"Butor - lapok: {lapokSzama}, ar {ArSzamol()} Ft";
+        }
+    }
 }
+
